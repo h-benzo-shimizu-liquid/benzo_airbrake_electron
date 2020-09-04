@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "esNext",
+		"moduleResolution": "node",
+		"jsx": "react",
+		"baseUrl": "./",
+		"paths": {
+			"@server/*": ["./src/main/*"],
+			"@client/*": ["./src/renderer/*"],
+		},
+	},
+}

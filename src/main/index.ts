@@ -3,7 +3,9 @@
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
 
-import { BrowserWindow, App, app, } from "electron";
+import { BrowserWindow, app, ipcMain, IpcMainEvent, } from "electron";
+import apiGroups, { RequestGroups, } from "./api/groups";
+import apiNotices, { RequestNotices, } from "./api/notices";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
@@ -25,10 +27,31 @@ app.on("window-all-closed", (): void => {
 });
 
 const create = (): void => {
-	mainWindow = new BrowserWindow({ width: 800, height: 400, });
+	mainWindow = new BrowserWindow({ width: 800, height: 400, webPreferences: { nodeIntegration: true, }, });
 	mainWindow.loadURL(`file://${__dirname}/index.html`);
 	mainWindow.on("closed", (): void => { mainWindow = null; });
+	//mainWindow.webContents.openDevTools();
 };
+
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+ipcMain.on("groups", (event: IpcMainEvent, request: RequestGroups): void => {
+	apiGroups(request).then((response: string): void => {
+		event.sender.send("groups", response);
+	}).catch((error: Error): void => {
+		console.log("error");
+	});
+});
+
+ipcMain.on("notices", (event: IpcMainEvent, request: RequestNotices): void => {
+	apiNotices(request).then((response: string): void => {
+		event.sender.send("notices", response);
+	}).catch((error: Error): void => {
+		console.log("error");
+	});
+});
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

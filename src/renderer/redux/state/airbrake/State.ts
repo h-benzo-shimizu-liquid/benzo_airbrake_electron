@@ -1,33 +1,37 @@
- 
-// ----------------------------------------------------------------
-// ----------------------------------------------------------------
-// ----------------------------------------------------------------
-
-import * as React from "react";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
 
-const Component: React.FunctionComponent<{}> = (): JSX.Element => {
-	return (
-		<div style = {{
-			display: "flex",
-			flexDirection: "column",
-			justifyContent: "center",
-			alignItems: "center",
-			position: "absolute",
-			left: "0",
-			right: "0",
-			top: "0",
-			bottom: "0",
-		}}>
-			hello world
-		</div>
-	);
+import { Group, } from "@client/api/groups";
+import { Notice, } from "@client/api/notices";
+
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+export interface StateGetCsvResponseNotice {
+	time: string;
+	value: Notice;
 };
 
-export default Component;
+export interface StateGetCsvResponseGroup {
+	time: string;
+	value: Group;
+	loadingCount: number;
+	list: StateGetCsvResponseNotice[] | null;
+};
+
+export type StateGetCsvResponse = {
+	[key: string]: StateGetCsvResponseGroup;
+};
+
+export interface State {
+	projectId: string;
+	userKey: string;
+	getCsvIsLoading: boolean;
+	getCsvResponse: StateGetCsvResponse | null;
+}
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

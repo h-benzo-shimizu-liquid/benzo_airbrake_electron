@@ -23,14 +23,15 @@ const main = {
 	},
 	resolve: {
 		extensions: [".js", ".ts",],
+		alias: {
+			"@server": path.resolve(__dirname, "./src/main"),
+			"@client": path.resolve(__dirname, "./src/renderer"),
+		},
 	},
 	module: {
 		rules: [{
 			test: /\.ts$/,
 			loader: "ts-loader",
-			options: {
-				configFile: "tsconfig.main.json",
-			},
 		},],
 	},
 };
@@ -44,14 +45,15 @@ const renderer = {
 	},
 	resolve: {
 		extensions: [".js", ".ts", ".tsx",],
+		alias: {
+			"@client": path.resolve(__dirname, "./src/renderer"),
+			"@server": path.resolve(__dirname, "./src/main"),
+		},
 	},
 	module: {
 		rules: [{
 			test: /\.(ts|tsx)$/,
 			loader: "ts-loader",
-			options: {
-				configFile: "tsconfig.renderer.json",
-			},
 		},],
 	},
 	plugins: [

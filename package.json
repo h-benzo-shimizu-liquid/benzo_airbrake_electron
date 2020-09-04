@@ -9,18 +9,26 @@
 		"test": "electron ./dist1/main.js"
 	},
 	"dependencies": {
-		"electron": "9.1.0",
-		"electron-builder": "22.4.1",
 		"typescript": "3.8.3",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
+		"react-router-dom": "5.0.1",
+		"react-redux": "7.1.0",
+		"redux": "4.0.1",
 		"@types/node": "14.0.1",
 		"@types/react": "16.9.32",
 		"@types/react-dom": "16.9.6",
+		"@types/react-router-dom": "4.3.4",
+		"@types/react-redux": "7.1.0",
+		"@types/redux": "3.6.0",
 		"webpack": "4.42.1",
 		"webpack-cli": "3.3.11",
 		"webpack-merge": "5.1.1",
 		"html-webpack-plugin": "4.0.4",
 		"ts-loader": "6.2.2"
+	},
+	"devDependencies": {
+		"electron": "9.1.0",
+		"electron-builder": "22.4.1"
 	}
 }
