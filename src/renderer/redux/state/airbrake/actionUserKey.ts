@@ -4,6 +4,7 @@
 // ----------------------------------------------------------------
 
 import * as Redux from "redux";
+import config from "@config/index";
 import { ActionTypes, } from "@renderer/redux/ActionTypes";
 import { State, } from "@renderer/redux/state/airbrake/State";
 
@@ -13,7 +14,7 @@ import { State, } from "@renderer/redux/state/airbrake/State";
 
 const key: string = "benzo_airbrake_tools_userKey";
 
-export const defaultUserKey: string = window.localStorage.getItem(key) || "";
+export const defaultUserKey: string = window.localStorage.getItem(key) || config.defaultUserKey;
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

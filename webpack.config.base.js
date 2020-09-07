@@ -27,6 +27,7 @@ const main = {
 		alias: {
 			"@main": path.resolve(__dirname, "./src/main"),
 			"@renderer": path.resolve(__dirname, "./src/renderer"),
+			"@config": path.resolve(__dirname, "./config"),
 		},
 	},
 	module: {
@@ -54,6 +55,7 @@ const renderer = {
 		alias: {
 			"@main": path.resolve(__dirname, "./src/main"),
 			"@renderer": path.resolve(__dirname, "./src/renderer"),
+			"@config": path.resolve(__dirname, "./config"),
 		},
 	},
 	module: {
