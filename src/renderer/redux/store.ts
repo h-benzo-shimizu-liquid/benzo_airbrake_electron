@@ -5,11 +5,11 @@
 
 import * as Redux from "redux";
 
-import { StateTemplate, stateTemplate, } from "@client/redux/state/template";
-import { StateAirbrake, stateAirbrake, } from "@client/redux/state/airbrake";
+import { StateTemplate, stateTemplate, } from "@renderer/redux/state/template";
+import { StateAirbrake, stateAirbrake, } from "@renderer/redux/state/airbrake";
 
-import middlewareAirbrake from "@client/redux/middleware/airbrake";
-import middlewareTemplate from "@client/redux/middleware/template";
+import middlewareAirbrake from "@renderer/redux/middleware/airbrake";
+import middlewareTemplate from "@renderer/redux/middleware/template";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

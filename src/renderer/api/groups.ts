@@ -3,9 +3,9 @@
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
 
-import { ipcRenderer, IpcRendererEvent, } from "electron";
-import { RequestGroups, } from "@server/api/groups"
-import { IndexedData, getIndexedData, putIndexedData, } from "@client/api/indexedDb"
+import { RequestGroups, } from "@main/api/groups"
+import { ipcRenderer, IpcRendererEvent, } from "@renderer/electron";
+import { IndexedData, getIndexedData, putIndexedData, } from "@renderer/api/indexedDb"
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

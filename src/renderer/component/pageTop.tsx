@@ -7,9 +7,9 @@ import * as React from "react";
 import { Link, } from "react-router-dom";
 import * as ReactRedux from "react-redux";
 import * as Redux from "redux";
-import { ReduxStoreState, } from "@client/redux/store";
-import { stateAirbrakeCreateActionProjectId, } from "@client/redux/state/airbrake/actionProjectId";
-import { stateAirbrakeCreateActionUserKey, } from "@client/redux/state/airbrake/actionUserKey";
+import { ReduxStoreState, } from "@renderer/redux/store";
+import { stateAirbrakeCreateActionProjectId, } from "@renderer/redux/state/airbrake/actionProjectId";
+import { stateAirbrakeCreateActionUserKey, } from "@renderer/redux/state/airbrake/actionUserKey";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

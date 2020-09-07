@@ -3,9 +3,9 @@
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
 
-import { ipcRenderer, IpcRendererEvent, } from "electron";
-import { RequestNotices, } from "@server/api/notices"
-import { IndexedData, getIndexedData, putIndexedData, } from "@client/api/indexedDb"
+import { RequestNotices, } from "@main/api/notices"
+import { ipcRenderer, IpcRendererEvent, } from "@renderer/electron";
+import { IndexedData, getIndexedData, putIndexedData, } from "@renderer/api/indexedDb"
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

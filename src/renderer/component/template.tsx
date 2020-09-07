@@ -7,8 +7,8 @@ import * as React from "react";
 import { Link, } from "react-router-dom";
 import * as ReactRedux from "react-redux";
 import * as Redux from "redux";
-import { ReduxStoreState, } from "@client/redux/store";
-import { stateTemplateCreateActionTest, } from "@client/redux/state/template/actionTest";
+import { ReduxStoreState, } from "@renderer/redux/store";
+import { stateTemplateCreateActionTest, } from "@renderer/redux/state/template/actionTest";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
@@ -46,7 +46,7 @@ const Component: React.FunctionComponent<{
 				<button onClick={(): void => setLocalValue(localValue - 1)}>sub</button>
 				<span>ローカル値: {localValue}</span>
 			</div>
-			<div><Link to='/top'>top</Link></div>
+			<div><Link to="/top">top</Link></div>
 		</div>
 	);
 };

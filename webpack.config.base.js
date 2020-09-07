@@ -5,6 +5,7 @@
 
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
@@ -24,8 +25,8 @@ const main = {
 	resolve: {
 		extensions: [".js", ".ts",],
 		alias: {
-			"@server": path.resolve(__dirname, "./src/main"),
-			"@client": path.resolve(__dirname, "./src/renderer"),
+			"@main": path.resolve(__dirname, "./src/main"),
+			"@renderer": path.resolve(__dirname, "./src/renderer"),
 		},
 	},
 	module: {
@@ -34,6 +35,11 @@ const main = {
 			loader: "ts-loader",
 		},],
 	},
+	plugins: [
+		new CopyWebpackPlugin([
+			{ from: "src/main/preload.js", },
+		]),
+	],
 };
 
 const renderer = {
@@ -46,8 +52,8 @@ const renderer = {
 	resolve: {
 		extensions: [".js", ".ts", ".tsx",],
 		alias: {
-			"@client": path.resolve(__dirname, "./src/renderer"),
-			"@server": path.resolve(__dirname, "./src/main"),
+			"@main": path.resolve(__dirname, "./src/main"),
+			"@renderer": path.resolve(__dirname, "./src/renderer"),
 		},
 	},
 	module: {

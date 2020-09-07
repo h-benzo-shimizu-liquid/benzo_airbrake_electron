@@ -4,8 +4,8 @@
 // ----------------------------------------------------------------
 
 import * as Redux from "redux";
-import { ActionTypes, } from "@client/redux/ActionTypes";
-import { State, } from "@client/redux/state/airbrake/State";
+import { ActionTypes, } from "@renderer/redux/ActionTypes";
+import { State, } from "@renderer/redux/state/airbrake/State";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

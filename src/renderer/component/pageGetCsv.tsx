@@ -7,11 +7,11 @@ import * as React from "react";
 import { Link, } from "react-router-dom";
 import * as ReactRedux from "react-redux";
 import * as Redux from "redux";
-import { Notice, } from "@client/api/notices";
-import { ReduxStoreState, } from "@client/redux/store";
-import { StateGetCsvResponse, } from "@client/redux/state/airbrake/State";
-import { middlewareAirbrakeCreateActionGetCsvGroups, } from "@client/redux/middleware/airbrake/actionGetCsvGroups";
-import { middlewareAirbrakeCreateActionGetCsvNotices, } from "@client/redux/middleware/airbrake/actionGetCsvNotices";
+import { Notice, } from "@renderer/api/notices";
+import { ReduxStoreState, } from "@renderer/redux/store";
+import { StateGetCsvResponse, } from "@renderer/redux/state/airbrake/State";
+import { middlewareAirbrakeCreateActionGetCsvGroups, } from "@renderer/redux/middleware/airbrake/actionGetCsvGroups";
+import { middlewareAirbrakeCreateActionGetCsvNotices, } from "@renderer/redux/middleware/airbrake/actionGetCsvNotices";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

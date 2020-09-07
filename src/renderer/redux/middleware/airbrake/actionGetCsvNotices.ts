@@ -4,11 +4,11 @@
 // ----------------------------------------------------------------
 
 import * as Redux from "redux";
-import apiNotices, { ResponseNotices, } from "@client/api/notices";
-import { ActionTypes, } from "@client/redux/ActionTypes";
-import { ReduxStoreState, } from "@client/redux/store";
-import { StateGetCsvResponse, StateGetCsvResponseGroup, StateGetCsvResponseNotice, } from "@client/redux/state/airbrake/State";
-import { stateAirbrakeCreateActionGetCsvResponseNotices, } from "@client/redux/state/airbrake/actionGetCsvResponseNotices";
+import apiNotices, { ResponseNotices, } from "@renderer/api/notices";
+import { ActionTypes, } from "@renderer/redux/ActionTypes";
+import { ReduxStoreState, } from "@renderer/redux/store";
+import { StateGetCsvResponse, StateGetCsvResponseGroup, StateGetCsvResponseNotice, } from "@renderer/redux/state/airbrake/State";
+import { stateAirbrakeCreateActionGetCsvResponseNotices, } from "@renderer/redux/state/airbrake/actionGetCsvResponseNotices";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

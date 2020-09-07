@@ -4,10 +4,10 @@
 // ----------------------------------------------------------------
 
 import * as Redux from "redux";
-import { ActionTypes, } from "@client/redux/ActionTypes";
-import { ReduxStoreState, } from "@client/redux/store";
-import { middlewareGetCsvGroups, } from "@client/redux/middleware/airbrake/actionGetCsvGroups";
-import { middlewareGetCsvNotices, } from "@client/redux/middleware/airbrake/actionGetCsvNotices";
+import { ActionTypes, } from "@renderer/redux/ActionTypes";
+import { ReduxStoreState, } from "@renderer/redux/store";
+import { middlewareGetCsvGroups, } from "@renderer/redux/middleware/airbrake/actionGetCsvGroups";
+import { middlewareGetCsvNotices, } from "@renderer/redux/middleware/airbrake/actionGetCsvNotices";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

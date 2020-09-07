@@ -4,12 +4,12 @@
 // ----------------------------------------------------------------
 
 import * as Redux from "redux";
-import apiGroups, { ResponseGroups, } from "@client/api/groups";
-import { ActionTypes, } from "@client/redux/ActionTypes";
-import { ReduxStoreState, } from "@client/redux/store";
-import { StateGetCsvResponse, } from "@client/redux/state/airbrake/State";
-import { stateAirbrakeCreateActionGetCsvIsLoading, } from "@client/redux/state/airbrake/actionGetCsvIsLoading";
-import { stateAirbrakeCreateActionGetCsvResponseGroups, } from "@client/redux/state/airbrake/actionGetCsvResponseGroups";
+import apiGroups, { ResponseGroups, } from "@renderer/api/groups";
+import { ActionTypes, } from "@renderer/redux/ActionTypes";
+import { ReduxStoreState, } from "@renderer/redux/store";
+import { StateGetCsvResponse, } from "@renderer/redux/state/airbrake/State";
+import { stateAirbrakeCreateActionGetCsvIsLoading, } from "@renderer/redux/state/airbrake/actionGetCsvIsLoading";
+import { stateAirbrakeCreateActionGetCsvResponseGroups, } from "@renderer/redux/state/airbrake/actionGetCsvResponseGroups";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

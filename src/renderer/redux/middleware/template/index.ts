@@ -4,9 +4,9 @@
 // ----------------------------------------------------------------
 
 import * as Redux from "redux";
-import { ActionTypes, } from "@client/redux/ActionTypes";
-import { ReduxStoreState, } from "@client/redux/store";
-import { middlewareTest, } from "@client/redux/middleware/template/actionTest";
+import { ActionTypes, } from "@renderer/redux/ActionTypes";
+import { ReduxStoreState, } from "@renderer/redux/store";
+import { middlewareTest, } from "@renderer/redux/middleware/template/actionTest";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

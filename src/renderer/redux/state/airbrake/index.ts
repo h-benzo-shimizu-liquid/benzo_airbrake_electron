@@ -4,13 +4,13 @@
 // ----------------------------------------------------------------
 
 import * as Redux from "redux";
-import { ActionTypes, } from "@client/redux/ActionTypes";
-import { State, } from "@client/redux/state/airbrake/State";
-import { defaultProjectId, reducerProjectId, } from "@client/redux/state/airbrake/actionProjectId";
-import { defaultUserKey, reducerUserKey, } from "@client/redux/state/airbrake/actionUserKey";
-import { reducerGetCsvIsLoading, } from "@client/redux/state/airbrake/actionGetCsvIsLoading";
-import { reducerGetCsvResponseGroups, } from "@client/redux/state/airbrake/actionGetCsvResponseGroups";
-import { reducerGetCsvResponseNotices, } from "@client/redux/state/airbrake/actionGetCsvResponseNotices";
+import { ActionTypes, } from "@renderer/redux/ActionTypes";
+import { State, } from "@renderer/redux/state/airbrake/State";
+import { defaultProjectId, reducerProjectId, } from "@renderer/redux/state/airbrake/actionProjectId";
+import { defaultUserKey, reducerUserKey, } from "@renderer/redux/state/airbrake/actionUserKey";
+import { reducerGetCsvIsLoading, } from "@renderer/redux/state/airbrake/actionGetCsvIsLoading";
+import { reducerGetCsvResponseGroups, } from "@renderer/redux/state/airbrake/actionGetCsvResponseGroups";
+import { reducerGetCsvResponseNotices, } from "@renderer/redux/state/airbrake/actionGetCsvResponseNotices";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

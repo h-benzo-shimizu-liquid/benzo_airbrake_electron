@@ -10,10 +10,10 @@ import {
 	Route,
 } from "react-router-dom";
 import * as ReactRedux from "react-redux";
-import { store, } from "@client/redux/store";
-import ComponentTemplate from "@client/component/template";
-import ComponentPageTop from "@client/component/pageTop";
-import ComponentPageGetCsv from "@client/component/pageGetCsv";
+import { store, } from "@renderer/redux/store";
+import ComponentTemplate from "@renderer/component/template";
+import ComponentPageTop from "@renderer/component/pageTop";
+import ComponentPageGetCsv from "@renderer/component/pageGetCsv";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

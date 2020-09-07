@@ -4,8 +4,8 @@
 // ----------------------------------------------------------------
 
 import { BrowserWindow, app, ipcMain, IpcMainEvent, } from "electron";
-import apiGroups, { RequestGroups, } from "./api/groups";
-import apiNotices, { RequestNotices, } from "./api/notices";
+import apiGroups, { RequestGroups, } from "@main/api/groups";
+import apiNotices, { RequestNotices, } from "@main/api/notices";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
@@ -27,7 +27,13 @@ app.on("window-all-closed", (): void => {
 });
 
 const create = (): void => {
-	mainWindow = new BrowserWindow({ width: 800, height: 400, webPreferences: { nodeIntegration: true, }, });
+	mainWindow = new BrowserWindow({
+		width: 800,
+		height: 400,
+		webPreferences: {
+			preload: `${__dirname}/preload.js`,
+		},
+	});
 	mainWindow.loadURL(`file://${__dirname}/index.html`);
 	mainWindow.on("closed", (): void => { mainWindow = null; });
 	//mainWindow.webContents.openDevTools();

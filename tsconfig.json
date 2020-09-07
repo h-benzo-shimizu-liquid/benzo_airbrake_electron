@@ -6,8 +6,8 @@
 		"jsx": "react",
 		"baseUrl": "./",
 		"paths": {
-			"@server/*": ["./src/main/*"],
-			"@client/*": ["./src/renderer/*"],
+			"@main/*": ["./src/main/*"],
+			"@renderer/*": ["./src/renderer/*"],
 		},
 	},
 }
