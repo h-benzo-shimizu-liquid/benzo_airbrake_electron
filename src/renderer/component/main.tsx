@@ -14,6 +14,7 @@ import { store, } from "@renderer/redux/store";
 import ComponentTemplate from "@renderer/component/template";
 import ComponentPageTop from "@renderer/component/pageTop";
 import ComponentPageGetCsv from "@renderer/component/pageGetCsv";
+import ComponentPageGetAll from "@renderer/component/pageGetAll";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
@@ -25,6 +26,7 @@ const Component: React.FunctionComponent<{}> = ({}): JSX.Element => {
 			<BrowserRouter>
 				<Switch>
 					<Route path="/getCsv" component={ComponentPageGetCsv} />
+					<Route path="/getAll" component={ComponentPageGetAll} />
 					<Route path="/template" component={ComponentTemplate} />
 					<Route component={ComponentPageTop} />
 				</Switch>

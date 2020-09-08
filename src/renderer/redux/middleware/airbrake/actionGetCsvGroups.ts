@@ -41,13 +41,13 @@ export async function middlewareGetCsvGroups(api: TypeArgument3, next: TypeArgum
 
 	const projectId: string = api.getState().stateAirbrake.projectId;
 	const userKey: string = api.getState().stateAirbrake.userKey;
-	const response1: ResponseGroups = await apiGroups({ projectId, userKey, page: "1", limit: "100", });
-	console.log("groups", response1);
+	const response: ResponseGroups = await apiGroups({ projectId, userKey, page: "1", limit: "100", });
+	console.log("groups", response);
 
 	const groups: StateGetCsvResponse = {};
-	for (let i: number = 0; i < response1.value.groups.length; i++) {
-		const groupId: string = response1.value.groups[i].id;
-		groups[groupId] = { time: response1.time, value: response1.value.groups[i], loadingCount: 0, list: null, };
+	for (let i: number = 0; i < response.value.groups.length; i++) {
+		const groupId: string = response.value.groups[i].id;
+		groups[groupId] = { time: response.time, value: response.value.groups[i], loadingCount: 0, list: null, };
 	}
 
 	next(stateAirbrakeCreateActionGetCsvResponseGroups(groups));

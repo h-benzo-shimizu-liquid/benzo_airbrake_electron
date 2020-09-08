@@ -8,6 +8,7 @@ import { ActionTypes, } from "@renderer/redux/ActionTypes";
 import { ReduxStoreState, } from "@renderer/redux/store";
 import { middlewareGetCsvGroups, } from "@renderer/redux/middleware/airbrake/actionGetCsvGroups";
 import { middlewareGetCsvNotices, } from "@renderer/redux/middleware/airbrake/actionGetCsvNotices";
+import { middlewareGetAll, } from "@renderer/redux/middleware/airbrake/actionGetAll";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
@@ -22,6 +23,7 @@ type TypeReturn3 = (next: TypeArgument2) => TypeReturn2;
 export default (api: TypeArgument3): TypeReturn3 => (next: TypeArgument2): TypeReturn2 => async (action: TypeArgument1): TypeReturn1 => {
 	if (await middlewareGetCsvGroups(api, next, action)) { return; }
 	if (await middlewareGetCsvNotices(api, next, action)) { return; }
+	if (await middlewareGetAll(api, next, action)) { return; }
 	next(action);
 };
 

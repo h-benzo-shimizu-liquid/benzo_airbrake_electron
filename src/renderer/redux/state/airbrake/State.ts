@@ -26,11 +26,15 @@ export type StateGetCsvResponse = {
 	[key: string]: StateGetCsvResponseGroup;
 };
 
+export type StateGetAllResponse = Notice[];
+
 export interface State {
 	projectId: string;
 	userKey: string;
 	getCsvIsLoading: boolean;
 	getCsvResponse: StateGetCsvResponse | null;
+	getAllLoadingCount: number;
+	getAllResponse: StateGetAllResponse | null;
 }
 
 // ----------------------------------------------------------------

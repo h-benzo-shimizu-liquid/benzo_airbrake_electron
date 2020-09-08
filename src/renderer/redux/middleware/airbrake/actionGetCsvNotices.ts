@@ -16,16 +16,18 @@ import { stateAirbrakeCreateActionGetCsvResponseNotices, } from "@renderer/redux
 
 // 命令構造体
 interface ActionGetCsvNotices extends Redux.Action<ActionTypes> {
-	value: string;
+	groupId: string;
+	period: number;
 }
 
 // ----------------------------------------------------------------
 
 // 命令作成
-function createActionGetCsvNotices(value: string): ActionGetCsvNotices {
+function createActionGetCsvNotices(groupId: string, period: number): ActionGetCsvNotices {
 	return {
 		type: ActionTypes.middlewareAirbrakeGetCsvNotices,
-		value: value,
+		groupId,
+		period,
 	};
 }
 
@@ -38,7 +40,7 @@ type TypeArgument3 = Redux.MiddlewareAPI<Redux.Dispatch, ReduxStoreState>;
 export async function middlewareGetCsvNotices(api: TypeArgument3, next: TypeArgument2, action: TypeArgument1): Promise<boolean> {
 	if (action.type !== ActionTypes.middlewareAirbrakeGetCsvNotices) { return false; }
 	const myAction: ActionGetCsvNotices = action as ActionGetCsvNotices;
-	const groupId: string = myAction.value;
+	const groupId: string = myAction.groupId;
 	const groups: StateGetCsvResponse | null = api.getState().stateAirbrake.getCsvResponse;
 	if (groups === null) { return false; }
 	const group: StateGetCsvResponseGroup = groups[groupId];
@@ -57,16 +59,15 @@ export async function middlewareGetCsvNotices(api: TypeArgument3, next: TypeArgu
 
 		const projectId: string = api.getState().stateAirbrake.projectId;
 		const userKey: string = api.getState().stateAirbrake.userKey;
-		const response2: ResponseNotices = await apiNotices({ projectId, userKey, groupId, page: `${page}`, limit: `${limit}`, });
-		console.log("notices", response2);
+		const response: ResponseNotices = await apiNotices({ projectId, userKey, groupId, page: `${page}`, limit: `${limit}`, });
+		console.log("notices", response);
 
 		// 1週間分のデータを取得
-		const week: number = 1000 * 60 * 60 * 24 * 7;
-		const now: number = new Date(response2.time).getTime();
-		for (let i: number = 0; i < response2.value.notices.length; i++) {
-			const createdAt: number = new Date(response2.value.notices[i].createdAt).getTime();
-			if (now - createdAt < week) {
-				notices.push({ time: response2.time, value: response2.value.notices[i], });
+		const now: number = new Date(response.time).getTime();
+		for (let i: number = 0; i < response.value.notices.length; i++) {
+			const createdAt: number = new Date(response.value.notices[i].createdAt).getTime();
+			if (now - createdAt < myAction.period) {
+				notices.push({ time: response.time, value: response.value.notices[i], });
 			} else {
 				isBreak = true;
 			}

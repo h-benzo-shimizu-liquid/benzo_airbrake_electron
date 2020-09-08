@@ -11,6 +11,8 @@ import { defaultUserKey, reducerUserKey, } from "@renderer/redux/state/airbrake/
 import { reducerGetCsvIsLoading, } from "@renderer/redux/state/airbrake/actionGetCsvIsLoading";
 import { reducerGetCsvResponseGroups, } from "@renderer/redux/state/airbrake/actionGetCsvResponseGroups";
 import { reducerGetCsvResponseNotices, } from "@renderer/redux/state/airbrake/actionGetCsvResponseNotices";
+import { reducerGetAllLoadingCount, } from "@renderer/redux/state/airbrake/actionGetAllLoadingCount";
+import { reducerGetAllResponse, } from "@renderer/redux/state/airbrake/actionGetAllResponse";
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
@@ -22,6 +24,8 @@ const initialState: State = {
 	userKey: defaultUserKey,
 	getCsvIsLoading: false,
 	getCsvResponse: null,
+	getAllLoadingCount: 0,
+	getAllResponse: null,
 };
 
 // ----------------------------------------------------------------
@@ -36,6 +40,8 @@ const reducer: Redux.Reducer<State> = (state: State | undefined, action: Redux.A
 	state = reducerGetCsvIsLoading(state, action);
 	state = reducerGetCsvResponseGroups(state, action);
 	state = reducerGetCsvResponseNotices(state, action);
+	state = reducerGetAllLoadingCount(state, action);
+	state = reducerGetAllResponse(state, action);
 	return state;
 };
 

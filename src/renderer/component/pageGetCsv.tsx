@@ -64,7 +64,7 @@ const Component: React.FunctionComponent<{}> = ({}): JSX.Element => {
 							<div style={{ width: "100px", marginLeft: "20px", }}>loading {storeResponse[key].loadingCount}</div>
 						) : storeResponse[key].list === null ? (
 							<button style={{ width: "100px", marginLeft: "20px", }} onClick={(): void => {
-								dispatch(middlewareAirbrakeCreateActionGetCsvNotices(key));
+								dispatch(middlewareAirbrakeCreateActionGetCsvNotices(key, 1000 * 60 * 60 * 24 * 7));
 							}}>get data</button>
 						) : (
 							<button style={{ width: "100px", marginLeft: "20px", }} onClick={(): void => {
