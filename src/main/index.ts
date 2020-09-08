@@ -45,17 +45,17 @@ const create = (): void => {
 
 ipcMain.on("groups", (event: IpcMainEvent, request: RequestGroups): void => {
 	apiGroups(request).then((response: string): void => {
-		event.sender.send("groups", response);
+		event.sender.send("groups", null, response);
 	}).catch((error: Error): void => {
-		console.log("error");
+		event.sender.send("groups", error, "");
 	});
 });
 
 ipcMain.on("notices", (event: IpcMainEvent, request: RequestNotices): void => {
 	apiNotices(request).then((response: string): void => {
-		event.sender.send("notices", response);
+		event.sender.send("notices", null, response);
 	}).catch((error: Error): void => {
-		console.log("error");
+		event.sender.send("notices", error, "");
 	});
 });
 
